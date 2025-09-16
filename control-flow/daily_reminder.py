@@ -1,23 +1,33 @@
 # daily_reminder.py
 
-# Ask user for input
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ").lower()
-time_bound = input("Is it time-bound? (yes/no): ").lower()
+Task = input("Enter your task: ")
+Priority = input("Priority (high/medium/low): ").lower()
+Time_Bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Process priority using match-case
-match priority:
+match Priority:
     case "high":
-        priority_text = f"'{task}' is a high priority task"
-    case "medium":
-        priority_text = f"'{task}' is a medium priority task"
-    case "low":
-        priority_text = f"'{task}' is a low priority task"
-    case _:
-        priority_text = f"'{task}' has an unknown priority"
+        if Time_Bound == "yes":
+            print(f"Reminder: '{Task}' is a high priority task that requires immediate attention today!")
+        elif Time_Bound == "no":
+            print(f"Reminder: '{Task}' is a high priority task. Consider completing it when you have free time.")
+        else:
+            print("Invalid time input.")
 
-# Check if task is time-bound and print reminder
-if time_bound == "yes":
-    print(f"Reminder: {priority_text} that requires immediate attention today!")
-else:
-    print(f"Reminder: {priority_text}. Consider completing it when you have free time.")
+    case "medium":
+        if Time_Bound == "yes":
+            print(f"Reminder: '{Task}' is a medium priority task that requires immediate attention today!")
+        elif Time_Bound == "no":
+            print(f"Reminder: '{Task}' is a medium priority task. Consider completing it when you have free time.")
+        else:
+            print("Invalid time input.")
+
+    case "low":
+        if Time_Bound == "yes":
+            print(f"Reminder: '{Task}' is a low priority task that requires immediate attention today!")
+        elif Time_Bound == "no":
+            print(f"Reminder: '{Task}' is a low priority task. Consider completing it when you have free time.")
+        else:
+            print("Invalid time input.")
+
+    case _:
+        print("Invalid priority input.")
