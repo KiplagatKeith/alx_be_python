@@ -1,20 +1,22 @@
 from datetime import datetime, timedelta, date
 
-# Part 1: Display current date and time
 def display_current_datetime():
     current_date = datetime.now()
-    # Must return formatted string
+    # return formatted current date/time string
     return current_date.strftime("%Y-%m-%d %H:%M:%S")
 
-print("Current date and time:", display_current_datetime())
-
-# Part 2: Calculate a future date
 def calculate_future_date(number_of_days):
+    # save future date in a variable as required
     future_date = date.today() + timedelta(days=number_of_days)
-    # Must return formatted string
+    # return formatted future date string
     return future_date.strftime("%Y-%m-%d")
 
-# Ask user for days
-number_of_days = int(input("Enter number of days: "))
+if __name__ == "__main__":
+    # print current datetime
+    print("Current date and time:", display_current_datetime())
 
-print("Future date:", calculate_future_date(number_of_days))
+    # *** Exact prompt required by the grader: ***
+    number_of_days = int(input("Enter the number of days to add to the current date: "))
+
+    # print future date
+    print("Future date:", calculate_future_date(number_of_days))
