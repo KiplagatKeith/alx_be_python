@@ -6,8 +6,8 @@ class TestSimpleCalculator(unittest.TestCase):
         self.calc = SimpleCalculator()
 
     def test_addition(self):
-        result = self.calc.add(2,3)
-        self.assertEqual(result, 5)
+        #result = self.calc.add(2,3)
+        self.assertEqual(self.calc.add(2,3), 5)
 
         result = self.calc.add(-1, 1)
         self.assertEqual(result, 0)
