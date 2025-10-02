@@ -3,7 +3,9 @@ class Book:
         self.title = title
         self.author = author
         self._is_checked_out = False
-
+    
+    def return_book(self):
+        return f"{self.title}"
 class Library:
     def __init__(self):
         self._books = []
