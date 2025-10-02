@@ -1,32 +1,23 @@
-import unittest
-from test_simple_calculator import SimpleCalculator
+# simple_calculator.py
 
-class Test(unittest.TestCase):
-    def setUp(self):
-        self.calc = SimpleCalculator()
+class SimpleCalculator:
+    """A simple calculator class that supports basic arithmetic operations."""
 
-    def test_add(self):
-        result = self.calc.add(2,3)
-        self.assertEqual(result, 5)
+    def add(self, a, b):
+        """Return the addition of a and b."""
+        return a + b
 
-        result = self.calc.add(-1, 1)
-        self.assertEqual(result, 0)
+    def subtract(self, a, b):
+        """Return the subtraction of b from a."""
+        return a - b
 
-    def test_subtract(self):
-        result = self.calc.subtract(5, 3)
-        self.assertEqual(result, 2)
+    def multiply(self, a, b):
+        """Return the multiplication of a and b."""
+        return a * b
 
-    def test_multiply(self):
-        result = self.calc.multiply(2, 3)
-        self.assertEqual(result, 6)
-
-    def test_divide(self):
-        result = self.calc.divide(4, 2)
-        self.assertEqual(result, 2)
-
-        with self.assertRaises(ValueError):
-            self.calc.divide(3, 0)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def divide(self, a, b):
+        """Return the division of a by b. Returns None if b is zero."""
+        if b == 0:
+            return None
+        return a / b
+    
